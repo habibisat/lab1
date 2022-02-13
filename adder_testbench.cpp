@@ -22,11 +22,10 @@ void advance_sim(dut_type* top, VerilatedVcdC* trace)
 
 int main()
 {
-	//VOneBitAdder* top = new VOneBitAdder();
-    srand(1234);  
-    int expected_sum;
-    int expected_carry_out;
-    int sum;
+	srand(1234);  
+	int expected_sum;
+ 	int expected_carry_out;
+    	int sum;
  	int carry_out;
 	bool sum_success;
 	bool carry_out_success;
@@ -55,9 +54,7 @@ int main()
 		// Model the behavior of the top.
 		expected_sum = ((!x)&(!y)&(carry_in)) | ((!x)&(y)&(!carry_in)) | ((x)&(!y)&(!carry_in)) | ((x)&(y)&(carry_in));
 		expected_carry_out = (x&carry_in) | (y&carry_in) | (x&y);
-		//expected_sum = (x+y)%2;
-		//expected_carry_out = (x+y)/2;
-			
+				
 		// Simulate/evaluate/progress time.
 		advance_sim(top, trace);	
 		top->eval();
@@ -94,5 +91,5 @@ int main()
 
     // Value generator.
 
-	//return 0;
+	return 0;
 }
